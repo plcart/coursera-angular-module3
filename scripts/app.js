@@ -37,7 +37,7 @@
         .directive('foundItems', [function () {
             return {
                 templateUrl: "template/item-template.html",
-                restrict: 'A',
+                restrict: 'E',
                 scope: {
                     foundItems: '<',
                     onRemove: '&'
