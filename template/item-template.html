@@ -1,0 +1,8 @@
+<div class="col-md-6" style="height:75px" ng-repeat="item in ctrl.foundItems">
+	<div class="col-md-8">
+		<label for="">{{::item.description}}</label>
+	</div>
+	<div class="col-md-4">
+		<button class="btn btn-danger" ng-click="ctrl.onRemove({index:$index})">Don't want this one!</button>
+	</div>
+</div>
