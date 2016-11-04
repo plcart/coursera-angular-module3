@@ -10,9 +10,13 @@
             ctrl.found = [];
 
             ctrl.search = function () {
-                MenuSearchService.getMatchedMenuItems(ctrl.searchTerm).then(function (items) {
-                    ctrl.found = items;
-                });
+                if (ctrl.searchTerm)
+                    MenuSearchService.getMatchedMenuItems(ctrl.searchTerm).then(function (items) {
+                        ctrl.found = items;
+                        ctrl.message = ctrl.found.length == 0 ? "Nothing found" : "";
+                    });
+                else
+                    ctrl.message = "Nothing found";
             };
 
             ctrl.removeItem = function (index) {
